@@ -1,9 +1,12 @@
 <h1>All my jobs</h1>
 
-{% for job in jobs %} {{ job.summary }} {% endfor %}
+{% for job in jobs %}
+    {{ job.summary }}
+{% endfor %}
 
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,10 +21,8 @@
 
     <!-- Bootstrap core CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      href="{% static 'css/bootstrap.min.css' %}"
       rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
     />
 
     <!-- Favicons -->
@@ -78,10 +79,9 @@
               enjoy playing Pokemon Card.
             </p>
             <p>
-              <a href="mailto:reisuke@abcdefg.com" class="btn btn-primary my-2"
-                >Email Me</a
-              >
+              <a href="mailto:reisuke@abc.jp" class="btn btn-primary my-2">Email Me</a>
             </p>
+            <img src="{% static 'nari.jpeg' %}"></img>
           </div>
         </div>
       </section>
@@ -141,15 +141,8 @@
       </div>
     </main>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-      crossorigin="anonymous"
-    ></script>
+    <script src="{% static 'jquery-3.6.0.min.js' %}" ></script>
+    <script src="{% static 'popper.min.js' %}" ></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" ></script>
   </body>
 </html>
