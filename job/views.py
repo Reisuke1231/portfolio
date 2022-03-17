@@ -1,8 +1,15 @@
-from django.shortcuts import render
+from tkinter import W
+from django.shortcuts import render, get_object_or_404
 from .models import Job
 
 
 def home(request):
     jobs = Job.objects.all()
-    print(jobs[0].summary)
+
     return render(request, 'home.html', {'jobs': jobs})
+
+
+def detail(request, job_id):
+    job = get_object_or_404(Job, pk=job_id)
+
+    return render(request, 'detail.html', {'job': job})
